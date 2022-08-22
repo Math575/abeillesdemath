@@ -27,9 +27,11 @@
     <div class="text-center my-3">
       <a  class="btn btn-primary" href="../_ruche/ajout-visite.php"><i class="bi bi-plus-circle"></i> Créer une visite</a>
       <a  class="btn btn-primary" href="../_ruche/list-visite.php"><i class="fa-solid fa-list"></i>  Liste des visites</a>
-      <a  class="btn btn-primary" href="../_ruche/ajout-nourrissement.php"><i class="fa-solid fa-list"></i>  Nourrissement</a>
     </div>
+    <div class="text-center my-3">
+      <a  class="btn btn-info" href="../_ruche/ajout-nourrissement.php"><i class="bi bi-plus-circle"></i>  Nourrissement</a>
     </div>
+    <hr>
     <?php
         require_once'../_footer/footer.php';
     ?>
