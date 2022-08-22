@@ -32,7 +32,7 @@
     <?php
         require_once'../_menu/menu.php';
     ?>
-    <h4 class="text-center my-4">Liste des visites</h4>
+    <h4 class="text-center my-4"><i class="fa-solid fa-list"></i> Liste des visites</h4>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -43,6 +43,7 @@
                         <th scope="col">Date visite</th>
                         <th scope="col">Type visite</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,9 @@
                         <td><?= $rvo['date_v'] ?></td>
                         <td><?= $rvo['type'] ?></td>
                         <td><?= $rvo['desc_visite'] ?></td>
+                        <td>
+                          <a class="btn btn-danger" href="_ruche/supprimer-visite.php?id=<?= $rvo['id'] ?>"><i class="bi bi-trash"></i></a>
+                        </td>
                     </tr>
                 </tbody>
                 <?php
