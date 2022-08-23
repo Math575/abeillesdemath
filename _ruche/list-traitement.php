@@ -7,13 +7,13 @@
         exit;
     }
 
-    $req_sql = "SELECT * , DATE_FORMAT(date_visite, '%d-%m-%Y') as date_v
-    FROM visite v
-    LEFT JOIN ruches r ON v.id_ruche = r.id_ruche
-    LEFT JOIN type_visite tv ON v.id_type_visite = tv.id_type_visite WHERE statut = '0'";
+    $req_sql = "SELECT * , DATE_FORMAT(date_debut, '%d-%m-%Y') as date_d,
+    DATE_FORMAT(date_fin, '%d-%m-%Y') as date_f
+    FROM traitement t
+    LEFT JOIN ruches r ON t.id_ruche = r.id_ruche WHERE statut = '0'";
     $req = $DB->prepare($req_sql);
     $req->execute();
-    $req_visite = $req->fetchAll();
+    $req_traitement = $req->fetchAll();
 
 ?>
 
@@ -40,23 +40,23 @@
                 <thead>
                     <tr>
                         <th scope="col">Ruche</th>
-                        <th scope="col">Date visite</th>
-                        <th scope="col">Type visite</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Date début</th>
+                        <th scope="col">Produit</th>
+                        <th scope="col">Date fin</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
-                foreach ($req_visite as $rv) {
+                foreach ($req_traitement as $rt) {
                 ?>
                     <tr>
-                        <td><?= $rv['libelle'] ?></td>
-                        <td><?= $rv['date_v'] ?></td>
-                        <td><?= $rv['type'] ?></td>
-                        <td><?= $rv['desc_visite'] ?></td>
+                        <td><?= $rt['libelle'] ?></td>
+                        <td><?= $rt['date_d'] ?></td>
+                        <td><?= $rt['produit'] ?></td>
+                        <td><?= $rt['date_f'] ?></td>
                         <td>
-                          <a class="btn btn-danger" href="_ruche/supprimer-visite.php?id=<?= $rv['id'] ?>"><i class="bi bi-trash"></i></a>
+                          <a class="btn btn-danger disabled" href="_ruche/supprimer-visite.php?id=<?= $rt['id'] ?>"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                 </tbody>

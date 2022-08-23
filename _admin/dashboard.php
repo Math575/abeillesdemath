@@ -32,6 +32,10 @@
       <a  class="btn btn-info" href="../_ruche/ajout-nourrissement.php"><i class="bi bi-plus-circle"></i>  Nourrissement</a>
       <a  class="btn btn-info" href="../_ruche/list-nourrissement.php"><i class="fa-solid fa-list"></i> Liste  Nourrissement</a>
     </div>
+    <div class="text-center my-3">
+      <a  class="btn btn-info" href="../_ruche/ajout-traitement.php"><i class="bi bi-plus-circle"></i>  Traitement</a>
+      <a  class="btn btn-info" href="../_ruche/list-traitement.php"><i class="fa-solid fa-list"></i> Liste Traitement</a>
+    </div>
     <hr>
     <?php
         require_once'../_footer/footer.php';
